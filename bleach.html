@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleach</title>
+    <link rel="stylesheet" href="./style/bleach.css">
+    <link rel="stylesheet" href="./img/icons/">
+    <link rel="stylesheet" href="./img/photo/">
+    <link rel="shortcut icon" href="./components/img/icons/bleach-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./components/fontawesome-free-6.6.0-web/css/all.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="img-content">
+                <a class="logo-bleach" href="./bleach.html"><img src="./components/img/icons/bleach-logo.png"></a>
+            </div>
+            
+            <ul>
+                <a class="link-content" href="./anime.html"><li>Anime</li></a>
+                <a class="link-content" href="./movie.html"><li>Filme</li></a>
+                <a id="button-item" href="game.html"><li>BLEACH: Rebirth of Souls</li></a>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Registre-se</h2>
+            <h2>e saiba tudo sobre</h2>
+            <h2><span>BLEACH: Rebirth of Souls</span></h2>
+
+            <p>
+                Desperte a lâmina que habita em você e mude o seu destino. Participe de batalhas emocionantes com habilidades de espada poderosas e personagens desta franquia lendária de anime.
+            </p>
+
+            <form id="resgister-user">
+                <!-- Registro do Nome -->
+                <input type="text" id="txtNome" name="txtNome" placeholder="Nome"><br>
+                <span id="error-nome" class="input-error">Nome não preenchido ou incorreto. Tente novamente.</span><br>
+                <!-- Registro do E-Mail -->
+                <input type="text" id="txtEmail" name="txtEmail" placeholder="E-Mail"><br>
+                <span id="error-email" class="input-error">E-mail não preenchido ou incorreto. Tente novamente.</span><br>
+                <!-- Botão de Registro -->
+                <button type="button" onclick="cadastraUser()">Registrar</button>
+            </form>
+            <div class="banner" id="hello-user"></div>
+        </aside>
+
+        <article>
+            <img class="Rebirth" src="./components/img/photo/img-rebirth.webp " alt="Bleach Rebirth of Souls Logo">
+        </article>
+    </main>
+    </body>
+<script>
+    function cadastraUser() {
+        document.getElementById("hello-user").innerHTML = "Registro Iniciado";
+        
+        var nome = document.getElementById("txtNome").value;
+        var email = document.getElementById("txtEmail").value;
+        
+        if (nome.length == 0) {
+            document.getElementById("error-nome").style.display = "block";
+        } else {
+            document.getElementById("error-nome").style.display = "none";
+        }
+        
+        if(email.length == 0) {
+            document.getElementById("error-email").style.display = "block";
+        } else {
+            document.getElementById("error-email").style.display = "none";
+        }
+        
+        if (nome.length != 0 && email.length != 0) {
+            document.getElementById("hello-user").innerHTML = `Você entrou como ${nome}.`;
+            document.getElementById("resgister-user").style.display = "none";
+            alert("Você se cadastrou com sucesso!!!")
+        }
+    }
+</script>
+</html>
